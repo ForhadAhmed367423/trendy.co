@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
@@ -248,12 +248,12 @@ console.log(user);
                 </div>
 
                 <div className="cartBox">
-                    <Link className="cart" to={"/myCart"}>
+                    <Link className="cart" to={"/cart"}>
                         <IoCartOutline />
                         <span>{myCart?.totalItem}</span>
                     </Link>
 
-                    <Link className="shopMore" to={"/allShoes"}>Shop More</Link>
+                    <Link className="shopMore" to={"/allProduct"}>Shop More</Link>
                 </div>
             </div>
 

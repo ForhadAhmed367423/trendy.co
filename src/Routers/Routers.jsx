@@ -4,9 +4,9 @@ import Register from "../Register/Register";
 import Login from "../Login/Login";
 import Home from "../Pages/Home/Home/Home";
 import AllProduct from "../Pages/AllProduct/AllProduct";
-import Ac from "../Pages/Dashboard/Ac";
 import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
 import Contacts from "../Pages/Contacts/Contacts";
+import Cart from "../Pages/Cart/Cart";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +32,10 @@ const router = createBrowserRouter([
         {
           path:'/contact',
           element:<Contacts/>
+        },
+        {
+          path:'/cart',
+          element:<Cart/>
         }
         
       ]

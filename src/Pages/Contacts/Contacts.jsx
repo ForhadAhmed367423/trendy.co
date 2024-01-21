@@ -1,6 +1,20 @@
-
+import { useRef } from "react";
+import emailjs from 'emailjs-com';
 
 const Contacts = () => {
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_wajlbjp', 'template_bcibxbb', form.current, 'hksanQEnyD7VEyjnO')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
     return (
         <section className="py-6  dark:text-black ">
 	<div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
@@ -29,18 +43,18 @@ const Contacts = () => {
 				</p>
 			</div>
 		</div>
-		<form  className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+		<form  ref={form} onSubmit={sendEmail} className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
 			<label className="block">
 				<span className="mb-1">Full name</span>
-				<input type="text" placeholder="Leroy Jenkins" className="block w-full rounded-md shadow-sm focus:ring focus:ri focus:ri dark:bg-white p-5" />
+				<input type="text" placeholder="Leroy Jenkins" className="block w-full rounded-md shadow-sm focus:ring focus:ri focus:ri dark:bg-white p-5" name="name" />
 			</label>
 			<label className="block">
 				<span className="mb-1">Email address</span>
-				<input type="email" placeholder="leroy@jenkins.com" className="block w-full rounded-md shadow-sm focus:ring focus:ri focus:ri dark:bg-white p-5" />
+				<input type="email" name="email" placeholder="leroy@jenkins.com" className="block w-full rounded-md shadow-sm  focus:ring focus:ri focus:ri dark:bg-white p-5" />
 			</label>
 			<label className="block">
 				<span className="mb-1">Message</span>
-				<textarea rows="3" className="block w-full rounded-md focus:ring focus:ri focus:ri dark:bg-white shadow-sm p-5" placeholder="Enter your message"></textarea>
+				<textarea rows="3" name="message" className="block w-full rounded-md focus:ring focus:ri focus:ri dark:bg-white shadow-sm p-5" placeholder="Enter your message"></textarea>
 			</label>
 			<button type="button"  className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ri  dark:bg-[#0E77DF] dark:text-white focus:ri hover:ri">Submit</button>
 		</form>
