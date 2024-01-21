@@ -1,0 +1,39 @@
+.banner{
+ width: 96%;   
+ margin: 20px auto;
+
+}
+
+.swiper-button-prev{
+
+    border-radius:50%;
+    
+    background: black;
+    width: 50px;
+    height: 50px;
+}
+
+.swiper-button-prev::after{
+color: white;
+font-size: 30px;
+}
+.swiper-button-next{
+    border-radius:50%;
+    
+    background: black;
+    width: 50px;
+    height: 50px;
+}
+
+.swiper-button-next::after{
+    color: white;
+    font-size: 30px;
+    }
+
+
+@media screen and (min-width: 1024px) and (max-width: 1350px) {
+
+   .banner{
+    width: 96%;
+   }
+}
