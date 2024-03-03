@@ -1,0 +1,36 @@
+.collections{
+    display: flex;
+    gap: 10px;
+}
+
+.collectionsCard{
+   
+}
+.collectionsCard .caard{
+    width: 320px !important;
+    height: 290px !important;
+    /* background: red !important; */
+    overflow: hidden;
+    /* border: 1px solid black; */
+    border-radius: 3px;
+    box-shadow: 5px black;
+    transition: 1s;
+}
+
+.collectionsCard .caard:hover{
+    border: 1px solid black;
+}
+
+.card-swiper{
+    width: 582px;
+    height: 550px;
+
+}
+
+.card-swiper .swiper-button-next{
+    visibility: hidden;
+}
+
+.card-swiper .swiper-button-prev{
+    visibility: hidden;
+}

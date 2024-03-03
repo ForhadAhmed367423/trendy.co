@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { Authcontext } from "../AuthProviders/AuthProvider";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { app } from "../../Firebase-config";
+import toast from "react-hot-toast";
 const Login = () => {
     const { loginWithEmail }=useContext(Authcontext);
     const GoogleProvider = new GoogleAuthProvider();
@@ -18,7 +19,7 @@ const Login = () => {
         loginWithEmail(email,password)
             .then(result=>{
                 const loggedUser = result.user;
-                console.log(loggedUser);
+                // console.log(loggedUser);
                 navigate('/');
                 })
     }
@@ -30,10 +31,8 @@ const Login = () => {
         .then(result=>{
             const logIn = result.user;
             console.log(logIn)
-            // userContext.setUser(logIn)
-            // localStorage.setItem('userData', JSON.stringify(logIn))
             navigate('/');
-            return alert('logged')
+            return toast.success('Logged in Successfully!');
         })
         // return Swal.fire({
         //     title: 'successfully logged in',

@@ -1,9 +1,12 @@
+import NewCollectionsCard from '../NewCollectionsCard/NewCollectionsCard';
 import './NewCollections.css'
 const NewCollection = () => {
     return (
         <div className="newCollection">
-            <h2 className='text-2xl font-bold'>Valentine Collections</h2>
-            <p>Best Valentine Gifts</p>
+            <h2 className='text-2xl font-bold'>New Collections</h2>
+            <p>Best New Gifts</p>
+
+            <NewCollectionsCard/>
         </div>
     );
 };

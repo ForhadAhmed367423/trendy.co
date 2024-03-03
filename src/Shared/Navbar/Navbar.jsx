@@ -13,6 +13,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Authcontext } from "../../AuthProviders/AuthProvider";
 // import axios from "axios";
 import { IoLogoUsd } from "react-icons/io5";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
 
@@ -56,6 +57,7 @@ console.log(user);
 
     const handleLogout = () => {
         logout();
+        return toast.success('Logout Successfully!')
     }
 
 
@@ -250,7 +252,7 @@ console.log(user);
                 <div className="cartBox">
                     <Link className="cart" to={"/cart"}>
                         <IoCartOutline />
-                        <span>{myCart?.totalItem}</span>
+                        <span>{myCart?.totalItem}b</span>
                     </Link>
 
                     <Link className="shopMore" to={"/allProduct"}>Shop More</Link>
