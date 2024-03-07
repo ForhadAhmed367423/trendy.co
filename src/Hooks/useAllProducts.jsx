@@ -3,15 +3,15 @@ import { useQuery } from '@tanstack/react-query';
 
 const useAllProducts = () => {
     const axiosSecure = useAxiosSecure();
-    const { data: items = [], refetch } = useQuery({
-        queryKey: ['items'],
+    const { data: products = [], refetch } = useQuery({
+        queryKey: ['products'],
         queryFn: async () => {
-            const res = await axiosSecure.get("/items")
+            const res = await axiosSecure.get("/all_products")
             return res.data;
         }
         
     })
-    return [items,refetch]
+    return [products,refetch]
 };
 
 export default useAllProducts;

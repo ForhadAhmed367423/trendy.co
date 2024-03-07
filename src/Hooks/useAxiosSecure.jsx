@@ -1,14 +1,15 @@
 import axios from "axios";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../providers/AuthProviders";
+import { Authcontext } from "../AuthProviders/AuthProvider";
+
 
 const axiosSecure = axios.create({
-  baseURL: "https://assignment12-category-0010-server.vercel.app",
+  baseURL: "http://localhost:3000",
 })
 const useAxiosSecure = () => {
   const navigate = useNavigate();
-  const { logOut } = useContext(AuthContext);
+  const { logOut } = useContext(Authcontext);
   axiosSecure.interceptors.request.use(function (config) {
     const token = localStorage.getItem('access-token');
     // console.log('interceptors hit')

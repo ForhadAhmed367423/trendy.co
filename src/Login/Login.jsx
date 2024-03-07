@@ -19,7 +19,7 @@ const Login = () => {
         loginWithEmail(email,password)
             .then(result=>{
                 const loggedUser = result.user;
-                // console.log(loggedUser);
+                console.log(loggedUser);
                 navigate('/');
                 })
     }
