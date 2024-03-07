@@ -26,17 +26,17 @@ const Details = () => {
     
     
     return (
-        <div className='flex'>
-            <div>
-                <img src={image} alt="" />
+        <div className='flex gap-5 p-10 items-center'>
+            <div className='w-1/2'>
+                <img className='w-full h-[500px]' src={image} alt="" />
             </div>
             <div>
-                <h3>{productTitle}</h3>
-                <div className="flex justify-between items-center">
-                <p className="text-lg font-bold text-red-700 dark:text-red-400">${price}</p>
-                <p className="text-md font-semibold  dark:text-black">Color: {color}</p>
+                <h3 className='text-4xl font-bold ' >{productTitle}</h3>
+                <div className="flex justify-between items-center mt-5">
+                <p className="text-lg font-bold text-red-700 dark:text-red-400 ">${price}</p>
+                <p className="text-md font-semibold  dark:text-black " >Color: {color}</p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 my-5">
                 <button className="bg-black text-white px-4 py-2 ">Buy Now </button>
                 <button className="border border-black px-4 py-2 ">Add to Cart</button>
             </div>
